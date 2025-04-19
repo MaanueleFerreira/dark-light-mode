@@ -3,3 +3,178 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --text-color: #fff;
+    --bg-url: url(./assets/bg-mobile.svg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --social-link-hover: rgba(255, 255, 255, 0.1);
+    --dark-light-mode: url(./assets/moon.svg);
+}
+
+.light {
+    --text-color: #000;
+    --bg-url: url(./assets/bg-mobile-light.svg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --social-link-hover: rgba(0, 0, 0, 0.1);
+    --dark-light-mode: url(./assets/sun.svg);
+}
+
+body {
+    /* Background: Color image repeat position/size */
+    background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+}
+
+body * {
+    color: var(--text-color);
+    font-family: "Montserrat", sans-serif;
+}
+
+#container{
+    width: 100%;
+    max-width: 600px;
+    height: 712px;
+    margin: 56px auto;
+    padding: 0px 24px;
+}
+
+#container_data_user{
+    text-align: center;
+    padding-inline: 24px;
+}
+
+#container_data_user img {
+    width: 130px;
+    display: block;
+    margin: auto;   
+}
+
+#nameUser {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Button dark e light mode */
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 24px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    border:0;
+    border-radius: 50%;
+    background-image: var(--dark-light-mode);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    position: absolute;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.light #switch button {
+    left: 0;
+    right: initial;
+}
+
+
+/* Lista */
+.navegation{
+    list-style: none;
+}
+
+.navegation li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.2s;
+}
+
+.navegation li a:hover{
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* redes sociais */
+.sociais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.sociais a{
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+.sociais a:hover {
+    background: var(--social-link-hover);
+    text-align: center;
+    color:white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+footer span{
+    font-weight: 700;
+}
+
+footer span:hover{
+    color: #BE6588;
+    text-decoration: underline;
+}
+
+@media (min-width: 700px) {
+    :root{
+        --bg-url: url(./assets/bg-desktop.svg);
+    }
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.svg);
+    }
+}
